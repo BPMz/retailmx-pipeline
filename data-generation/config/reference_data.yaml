@@ -1,0 +1,154 @@
+countries:
+  - Colombia
+  - Mexico
+  - Chile
+  - Peru
+  - Ecuador
+
+
+locations:
+  - id_ciudad: CO-BOG
+    id_pais: CO
+    ciudad: Bogota
+    pais: Colombia
+
+  - id_ciudad: CO-MDE
+    id_pais: CO
+    ciudad: Medellin
+    pais: Colombia
+
+  - id_ciudad: MX-CMX
+    id_pais: MX
+    ciudad: Ciudad de Mexico
+    pais: Mexico
+
+  - id_ciudad: MX-MTY
+    id_pais: MX
+    ciudad: Monterrey
+    pais: Mexico
+
+  - id_ciudad: CL-SCL
+    id_pais: CL
+    ciudad: Santiago
+    pais: Chile
+
+  - id_ciudad: PE-LIM
+    id_pais: PE
+    ciudad: Lima
+    pais: Peru
+
+  - id_ciudad: EC-UIO
+    id_pais: EC
+    ciudad: Quito
+    pais: Ecuador
+
+
+store_types:
+  - hypermarket
+  - supermarket
+  - convenience_store
+  - ecommerce
+
+
+sales_channels:
+  - physical_store
+  - ecommerce
+  - marketplace
+
+
+payment_types:
+  physical_store:
+    - cash
+    - credit_card
+    - debit_card
+    - digital_wallet
+
+  ecommerce:
+    - credit_card
+    - debit_card
+    - digital_wallet
+
+  marketplace:
+    - credit_card
+    - debit_card
+    - digital_wallet
+
+
+genders:
+  - M
+  - F
+  - No informado
+
+
+age_groups:
+  - "18-25"
+  - "26-35"
+  - "36-45"
+  - "46-60"
+  - "+60"
+
+
+units_of_measure:
+  - unidad
+  - kg
+  - litro
+  - pack
+
+
+categories:
+  - name: Alimentos y bebidas
+    subcategories:
+      - Abarrotes
+      - Bebidas
+      - Congelados
+      - Lacteos
+      - Snacks
+
+  - name: Cuidado personal e higiene
+    subcategories:
+      - Cabello
+      - Cuidado oral
+      - Higiene personal
+      - Piel
+
+  - name: Hogar y limpieza
+    subcategories:
+      - Lavanderia
+      - Cocina
+      - Limpieza
+      - Organizacion
+
+  - name: Electronica y tecnologia
+    subcategories:
+      - Audio
+      - Computo
+      - Telefonia
+      - Accesorios
+
+  - name: Ropa y calzado basico
+    subcategories:
+      - Ropa mujer
+      - Ropa hombre
+      - Infantil
+      - Calzado
+
+  - name: Bebes y maternidad
+    subcategories:
+      - Alimentacion
+      - Higiene
+      - Pañales
+      - Maternidad
+
+
+return_reasons:
+  - DAMAGED
+  - WRONG_ITEM
+  - LATE_DELIVERY
+  - CUSTOMER_REGRET
+  - QUALITY_ISSUE
+
+
+return_statuses:
+  - approved
+  - rejected
+  - pending

@@ -1,0 +1,112 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*$py.class
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+.coverage
+.coverage.*
+htmlcov/
+
+build/
+dist/
+*.egg-info/
+
+.ipynb_checkpoints/
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Variables de entorno, credenciales y secretos
+.env
+.env.*
+
+# Se conserva únicamente como plantilla sin valores reales
+!.env.example
+
+secrets/
+credentials/
+
+*.pem
+*.key
+*.pfx
+*.p12
+*.secret
+*.publishsettings
+
+local.settings.json
+.databrickscfg
+
+# Datos generados
+data-generation/output/**
+
+# Se conservan únicamente las carpetas mediante .gitkeep
+!data-generation/output/
+!data-generation/output/csv/
+!data-generation/output/parquet/
+!data-generation/output/csv/.gitkeep
+!data-generation/output/parquet/.gitkeep
+
+# Logs
+*.log
+**/logs/
+
+# Great Expectations
+**/great_expectations/uncommitted/
+**/great_expectations/local_site/
+**/great_expectations/validation_results/
+
+# Terraform
+**/.terraform/*
+
+*.tfstate
+*.tfstate.*
+*.tfplan
+
+crash.log
+crash.*.log
+
+# Los archivos tfvars pueden contener secretos
+*.tfvars
+*.tfvars.json
+*.auto.tfvars
+*.auto.tfvars.json
+
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+.terraformrc
+terraform.rc
+
+# Azure
+.azure/
+
+# Databricks
+.databricks/
+databricks.yml.local
+
+# Editores
+.vscode/
+.idea/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos temporales
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
