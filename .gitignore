@@ -64,29 +64,9 @@ data-generation/output/**
 **/great_expectations/local_site/
 **/great_expectations/validation_results/
 
-# Terraform
-**/.terraform/*
 
-*.tfstate
-*.tfstate.*
-*.tfplan
-
-crash.log
-crash.*.log
-
-# Los archivos tfvars pueden contener secretos
-*.tfvars
-*.tfvars.json
-*.auto.tfvars
-*.auto.tfvars.json
-
-override.tf
-override.tf.json
-*_override.tf
-*_override.tf.json
-
-.terraformrc
-terraform.rc
+*-parameters.json
+main.json
 
 # Azure
 .azure/
