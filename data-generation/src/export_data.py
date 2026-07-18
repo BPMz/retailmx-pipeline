@@ -1,5 +1,4 @@
 from pathlib import Path
-from tempfile import TemporaryDirectory
 
 import pandas as pd
 
@@ -34,40 +33,3 @@ def export_tables(
             written_files.append(file_path)
 
     return written_files
-
-
-def _run_self_test() -> None:
-    """
-    Comprueba la exportación a CSV y Parquet.
-    """
-    tables = {
-        "TEST_TABLE": pd.DataFrame(
-            {
-                "id": [1, 2, 3],
-                "valor": [100, 200, 300],
-            }
-        )
-    }
-
-    with TemporaryDirectory() as directory:
-        files = export_tables(
-            tables=tables,
-            output_path=Path(directory),
-            formats=["csv", "parquet"],
-        )
-
-        assert len(files) == 2
-        assert all(file_path.exists()
-            for file_path in files
-        )
-
-        print("\nArchivos exportados:")
-
-        for file_path in files:
-            print(file_path.name)
-
-    print("\nPrueba de export_data.py " "completada correctamente.")
-
-
-if __name__ == "__main__":
-    _run_self_test()

@@ -80,13 +80,6 @@ genders:
   - No informado
 
 
-age_groups:
-  - "18-25"
-  - "26-35"
-  - "36-45"
-  - "46-60"
-  - "+60"
-
 
 units_of_measure:
   - unidad

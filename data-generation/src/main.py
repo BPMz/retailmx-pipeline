@@ -1,6 +1,6 @@
 from pathlib import Path
 
-# Este script es el punto de entrada para la generación de datos fuente. Ejecuta todo el proceso de generación, introducción de anomalías y exportación de los datos generados.
+# Punto de entrada para generar y exportar datos fuente.
 from src.anomalies import inject_anomalies
 from src.config import load_project_configuration
 from src.export_data import export_tables
@@ -8,9 +8,7 @@ from src.generate_data import generate_source_data
 
 
 def main() -> None:
-    """
-    Ejecuta la generación completa de datos fuente.
-    """
+    """Ejecuta la generación completa de datos fuente."""
     project_root = Path(__file__).resolve().parents[1]
 
     config, reference_data = load_project_configuration(project_root)

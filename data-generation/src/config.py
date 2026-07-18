@@ -4,7 +4,7 @@ from typing import Any
 
 import yaml
 
-# Está definido un conjunto de tablas requeridas para la generación de datos.
+# tablas requeridas para la generación de datos.
 REQUIRED_TABLES = {
     "proveedores",
     "articulos",
@@ -22,7 +22,6 @@ REQUIRED_CATALOGS = {
     "sales_channels",
     "payment_types",
     "genders",
-    "age_groups",
     "units_of_measure",
     "categories",
     "return_reasons",
@@ -31,15 +30,12 @@ REQUIRED_CATALOGS = {
 
 SUPPORTED_FORMATS = {
     "csv",
-    "json",
     "parquet",
 }
 
 # Funcion para cargar un archivo YAML y devolver su contenido como un diccionario.
 def load_yaml(file_path: Path) -> dict[str, Any]:
-    """
-    Lee un archivo YAML y devuelve su contenido.
-    """
+    """ Lee un archivo YAML y devuelve su contenido. """
     if not file_path.exists():
         raise FileNotFoundError(
             f"No se encontró el archivo: {file_path}"
@@ -61,9 +57,7 @@ def validate_probability(
     value: Any,
     field_name: str,
 ) -> None:
-    """
-    Comprueba que una probabilidad esté entre 0 y 1.
-    """
+    """ Comprueba que una probabilidad esté entre 0 y 1."""
     if not isinstance(value, (int, float)):
         raise ValueError(
             f"'{field_name}' debe ser un número."
@@ -78,9 +72,7 @@ def validate_probability(
 def validate_generation_config(
     config: dict[str, Any],
 ) -> None:
-    """
-    Valida los parámetros principales de generation_config.yaml.
-    """
+    """Valida los parámetros principales de generation_config.yaml. """
     project = config.get("project")
 
     if not isinstance(project, dict):
@@ -236,9 +228,7 @@ def validate_generation_config(
 def validate_reference_data(
     reference_data: dict[str, Any],
 ) -> None:
-    """
-    Comprueba que existan los catálogos necesarios.
-    """
+    """Comprueba que existan los catálogos necesarios."""
     missing_catalogs = REQUIRED_CATALOGS.difference(
         reference_data
     )
@@ -275,9 +265,7 @@ def validate_reference_data(
 def load_project_configuration(
     project_root: Path,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
-    """
-    Carga y valida los archivos de configuración del proyecto.
-    """
+    """Carga y valida los archivos de configuración del proyecto."""
     config_path = (
         project_root
         / "config"

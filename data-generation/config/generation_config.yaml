@@ -3,7 +3,6 @@ project:
   locale: es_MX
   seed: 42
 
-# Cantidades de registros a generar para cada tabla.
 tables:
     proveedores: 50
     articulos: 500
@@ -22,7 +21,6 @@ date_range:
 paths:
   source: output
 
-# La prueba solicita al menos dos formatos.
 output:
   formats:
     - csv
@@ -32,7 +30,7 @@ output:
 data_quality:
   null_percentage: 0.05
 
-# Porcentajes pequeños para tres anomalías controladas.
+# Porcentajes pequeños para tres anomalías.
 anomalies:
   enabled: true
   duplicate_sales_rate: 0.003
