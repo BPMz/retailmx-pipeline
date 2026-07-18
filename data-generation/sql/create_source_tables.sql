@@ -1,11 +1,9 @@
-/* Generación y carga de datos sintéticos
-
-Crear en Azure SQL Database las siete tablas relacionales que actuarán como fuente de origen del pipeline de datos. */
+/*Crea la estructura de la base de datos: esquema, tablas, claves primarias y claves foráneas..*/
 
 SET NOCOUNT ON;
 GO
 
-/* CREACIÓN DEL ESQUEMA SOURCE*/
+/* Crear esquema */
 IF NOT EXISTS (
     SELECT 1
     FROM sys.schemas
@@ -17,7 +15,7 @@ END;
 GO
 
 
-/* ELIMINACIÓN DE TABLAS ANTERIORES */
+/* Eliminar tablas anteriores respetando sus dependencias */
 DROP TABLE IF EXISTS [source].[POST_DEVOLUCIONES];
 DROP TABLE IF EXISTS [source].[INV_STOCK_DIARIO];
 DROP TABLE IF EXISTS [source].[TRANS_VENTAS];
@@ -28,8 +26,7 @@ DROP TABLE IF EXISTS [source].[MSTR_PROVEEDORES];
 GO
 
 
-/* TABLA DE PROVEEDORES
-Es la primera tabla que se crea porque MSTR_ARTICULOS depende de ella. */
+/* Proveedores */
 CREATE TABLE [source].[MSTR_PROVEEDORES] (
     [id_proveedor] INT NOT NULL,
     [razon_social] NVARCHAR(200) NOT NULL,
@@ -43,9 +40,7 @@ CREATE TABLE [source].[MSTR_PROVEEDORES] (
 );
 GO
 
-
-/* TABLA DE ARTÍCULOS
-id_proveedor relaciona cada artículo con un proveedor existente.*/
+/* Artículos */
 CREATE TABLE [source].[MSTR_ARTICULOS] (
     [art_id] INT NOT NULL,
     [cod_barra] VARCHAR(13) NOT NULL,
@@ -62,16 +57,14 @@ CREATE TABLE [source].[MSTR_ARTICULOS] (
 
     CONSTRAINT [PK_MSTR_ARTICULOS]
         PRIMARY KEY ([art_id]),
-        
+
     CONSTRAINT [FK_ARTICULOS_PROVEEDORES]
         FOREIGN KEY ([id_proveedor])
         REFERENCES [source].[MSTR_PROVEEDORES] ([id_proveedor])
 );
 GO
 
-
-/* TABLA DE TIENDAS
-Contiene las tiendas físicas y digitales de RetailMax.*/
+/* Tiendas */
 CREATE TABLE [source].[MSTR_TIENDAS] (
     [id_tienda] INT NOT NULL,
     [nom_tienda] NVARCHAR(200) NOT NULL,
@@ -87,9 +80,7 @@ CREATE TABLE [source].[MSTR_TIENDAS] (
 );
 GO
 
-
-/* TABLA DE MIEMBROS
-Contiene los clientes registrados en el programa de fidelización. */
+/* Miembros del programa de fidelización */
 CREATE TABLE [source].[CRM_MIEMBROS] (
     [id_miembro] INT NOT NULL,
     [fec_registro] DATE NOT NULL,
@@ -105,10 +96,7 @@ CREATE TABLE [source].[CRM_MIEMBROS] (
 );
 GO
 
-
-/* TABLA DE VENTAS
-Contiene las transacciones realizadas por los clientes.
-   Las ventas se relacionan con: CRM_MIEMBROS, MSTR_TIENDAS, MSTR_ARTICULOS */
+/* Ventas */
 CREATE TABLE [source].[TRANS_VENTAS] (
     [id_trans] BIGINT NOT NULL,
     [id_miembro] INT NULL,
@@ -139,10 +127,7 @@ CREATE TABLE [source].[TRANS_VENTAS] (
 );
 GO
 
-
-/* TABLA DE INVENTARIO
-Se relaciona con artículos y tiendas para posteriormente calcular riesgo de
-quiebre, disponibilidad y necesidades de reposición.*/
+/* Inventario diario */
 CREATE TABLE [source].[INV_STOCK_DIARIO] (
     [id_snapshot] BIGINT NOT NULL,
     [art_id] INT NOT NULL,
@@ -168,9 +153,7 @@ CREATE TABLE [source].[INV_STOCK_DIARIO] (
 GO
 
 
-/* TABLA DE DEVOLUCIONES
-Contiene las devoluciones asociadas con una venta original.
-La devolución se relaciona con: La venta original. El artículo devuelto. La tienda que procesa la devolución. */
+/* Devoluciones */
 CREATE TABLE [source].[POST_DEVOLUCIONES] (
     [id_devolucion] BIGINT NOT NULL,
     [id_trans_origen] BIGINT NOT NULL,
@@ -200,7 +183,5 @@ CREATE TABLE [source].[POST_DEVOLUCIONES] (
 );
 GO
 
-
-/* MENSAJE DE CONFIRMACIÓN */
 PRINT 'Esquema source y siete tablas de RetailMax creados correctamente.';
 GO
