@@ -1,0 +1,8 @@
+MSTR_PROVEEDORES: 0 registros
+MSTR_ARTICULOS: 0 registros
+MSTR_TIENDAS: 0 registros
+CRM_MIEMBROS: 0 registros
+TRANS_VENTAS: 0 registros
+INV_STOCK_DIARIO: 0 registros
+POST_DEVOLUCIONES: 0 registros
+Capa Bronze finalizada.

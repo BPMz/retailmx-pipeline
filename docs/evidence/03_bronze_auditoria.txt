@@ -1,0 +1,20 @@
+TOTAL DE REGISTROS: 80
+
+COLUMNAS:
+- id_proveedor
+- razon_social
+- pais_origen
+- tiempo_repo_dias
+- calificacion_calidad
+- activo
+- ingestion_timestamp
+- source_system
+- batch_id
+
+COLUMNAS DE AUDITORIA:
+             ingestion_timestamp      source_system                         batch_id
+2026-07-19 06:05:37.028476+00:00 Azure SQL Database 20260719T060537_mstr_proveedores
+2026-07-19 06:05:37.028476+00:00 Azure SQL Database 20260719T060537_mstr_proveedores
+2026-07-19 06:05:37.028476+00:00 Azure SQL Database 20260719T060537_mstr_proveedores
+2026-07-19 06:05:37.028476+00:00 Azure SQL Database 20260719T060537_mstr_proveedores
+2026-07-19 06:05:37.028476+00:00 Azure SQL Database 20260719T060537_mstr_proveedores
