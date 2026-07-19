@@ -1,9 +1,6 @@
-/*Crea la estructura de la base de datos: esquema, tablas, claves primarias y claves foráneas..*/
-
 SET NOCOUNT ON;
 GO
 
-/* Crear esquema */
 IF NOT EXISTS (
     SELECT 1
     FROM sys.schemas
@@ -15,7 +12,6 @@ END;
 GO
 
 
-/* Eliminar tablas anteriores respetando sus dependencias */
 DROP TABLE IF EXISTS [source].[POST_DEVOLUCIONES];
 DROP TABLE IF EXISTS [source].[INV_STOCK_DIARIO];
 DROP TABLE IF EXISTS [source].[TRANS_VENTAS];
@@ -26,7 +22,6 @@ DROP TABLE IF EXISTS [source].[MSTR_PROVEEDORES];
 GO
 
 
-/* Proveedores */
 CREATE TABLE [source].[MSTR_PROVEEDORES] (
     [id_proveedor] INT NOT NULL,
     [razon_social] NVARCHAR(200) NOT NULL,
@@ -40,7 +35,6 @@ CREATE TABLE [source].[MSTR_PROVEEDORES] (
 );
 GO
 
-/* Artículos */
 CREATE TABLE [source].[MSTR_ARTICULOS] (
     [art_id] INT NOT NULL,
     [cod_barra] VARCHAR(13) NOT NULL,
@@ -64,7 +58,6 @@ CREATE TABLE [source].[MSTR_ARTICULOS] (
 );
 GO
 
-/* Tiendas */
 CREATE TABLE [source].[MSTR_TIENDAS] (
     [id_tienda] INT NOT NULL,
     [nom_tienda] NVARCHAR(200) NOT NULL,
@@ -80,7 +73,6 @@ CREATE TABLE [source].[MSTR_TIENDAS] (
 );
 GO
 
-/* Miembros del programa de fidelización */
 CREATE TABLE [source].[CRM_MIEMBROS] (
     [id_miembro] INT NOT NULL,
     [fec_registro] DATE NOT NULL,
@@ -96,7 +88,6 @@ CREATE TABLE [source].[CRM_MIEMBROS] (
 );
 GO
 
-/* Ventas */
 CREATE TABLE [source].[TRANS_VENTAS] (
     [id_trans] BIGINT NOT NULL,
     [id_miembro] INT NULL,
@@ -127,7 +118,6 @@ CREATE TABLE [source].[TRANS_VENTAS] (
 );
 GO
 
-/* Inventario diario */
 CREATE TABLE [source].[INV_STOCK_DIARIO] (
     [id_snapshot] BIGINT NOT NULL,
     [art_id] INT NOT NULL,
@@ -152,8 +142,6 @@ CREATE TABLE [source].[INV_STOCK_DIARIO] (
 );
 GO
 
-
-/* Devoluciones */
 CREATE TABLE [source].[POST_DEVOLUCIONES] (
     [id_devolucion] BIGINT NOT NULL,
     [id_trans_origen] BIGINT NOT NULL,
