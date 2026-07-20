@@ -4,20 +4,18 @@ project:
   seed: 42
 
 tables:
-    proveedores: 80 #800
-    articulos: 500 #5000
-    tiendas: 15 #150
-    miembros: 5000 #50000
-    ventas: 10000 #1000000
-    stock: 7500 #75000
-    devoluciones: 500 #5000
+    proveedores: 80       #800
+    articulos: 500        #5000
+    tiendas: 15           #150
+    miembros: 5000        #50000
+    ventas: 10000         #1000000
+    stock: 7500           #75000
+    devoluciones: 500     #5000
 
-# Periodo principal de las tablas transaccionales.
 date_range:
   start_date: "2024-06-01"
   end_date: "2025-06-30"
 
-# Rutas donde se guardarán los datos generados.
 paths:
   source: output
 
@@ -26,11 +24,9 @@ output:
     - csv
     - parquet
 
-# Porcentaje aproximado de nulos en campos no críticos.
 data_quality:
   null_percentage: 0.05
 
-# Porcentajes pequeños para tres anomalías.
 anomalies:
   enabled: true
   duplicate_sales_rate: 0.003

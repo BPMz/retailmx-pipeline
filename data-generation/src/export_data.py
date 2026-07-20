@@ -8,9 +8,7 @@ def export_tables(
     output_path: Path,
     formats: list[str],
 ) -> list[Path]:
-    """
-    Exporta todas las tablas en los formatos configurados.
-    """
+    """Exporta todas las tablas en los formatos configurados."""
     written_files: list[Path] = []
 
     for file_format in formats:

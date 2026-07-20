@@ -10,9 +10,7 @@ def _affected_rows(
     total_rows: int,
     rate: float,
 ) -> int:
-    """
-    Calcula la cantidad de filas afectadas.
-    """
+    """Calcula la cantidad de filas afectadas."""
     if total_rows == 0 or rate <= 0:
         return 0
 
@@ -28,9 +26,7 @@ def inject_out_of_range_sales(
     rate: float,
     rng: np.random.Generator,
 ) -> int:
-    """
-    Asigna fechas anteriores al periodo permitido.
-    """
+    """Asigna fechas anteriores al periodo permitido."""
     affected = _affected_rows(len(ventas),rate,)
 
     if affected == 0:
@@ -50,9 +46,7 @@ def inject_duplicate_sales(
     rate: float,
     rng: np.random.Generator,
 ) -> int:
-    """
-    Duplica eventos de venta sin repetir id_trans.
-    """
+    """Duplica eventos de venta sin repetir id_trans."""
     affected = min(_affected_rows(len(ventas), rate,), len(ventas) // 2,)
 
     if affected == 0:
@@ -84,10 +78,7 @@ def inject_inconsistent_returns(
     rate: float,
     rng: np.random.Generator,
 ) -> int:
-    """
-    Genera devoluciones con cantidad y reembolso
-    superiores a la venta original.
-    """
+    """Genera devoluciones con cantidad y reembolsosuperiores a la venta original."""
     affected = _affected_rows(
         len(devoluciones),
         rate,
@@ -166,9 +157,7 @@ def inject_anomalies(
     dict[str, pd.DataFrame],
     pd.DataFrame,
 ]:
-    """
-    Introduce los tres patrones de anomalías.
-    """
+    """Introduce los tres patrones de anomalías."""
     anomaly_config = config["anomalies"]
 
     if not anomaly_config["enabled"]:
@@ -191,8 +180,6 @@ def inject_anomalies(
         "POST_DEVOLUCIONES"
     ]
 
-    # Se aplican primero las fechas y después
-    # los duplicados para no romper los pares duplicados.
     out_of_range_count = (
         inject_out_of_range_sales(
             ventas=ventas,

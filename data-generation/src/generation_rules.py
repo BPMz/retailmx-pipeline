@@ -3,8 +3,6 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
-# Este script solo contiene las reglas de generación de datos.
-
 def generate_random_dates(
     row_count: int,
     start_date: pd.Timestamp,

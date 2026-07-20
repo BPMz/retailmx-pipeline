@@ -1,0 +1,9 @@
+MSTR_PROVEEDORES: 80 validos | 0 rechazados
+MSTR_ARTICULOS: 500 validos | 0 rechazados
+MSTR_TIENDAS: 15 validos | 0 rechazados
+CRM_MIEMBROS: 5,000 validos | 0 rechazados
+TRANS_VENTAS: 10,000 validos | 0 rechazados
+INV_STOCK_DIARIO: 7,500 validos | 0 rechazados
+POST_DEVOLUCIONES: 500 validos | 0 rechazados
+Reporte local: C:\Users\brenda\Documents\GitHub\retail-pipeline\docs\evidence\reporte_calidad_silver_20260719_102807.md
+Capa Silver finalizada.

@@ -1,0 +1,45 @@
+=======================================================
+RetailMax - Pipeline Medallion
+=======================================================
+Inicio: 2026-07-19 14:06:15
+Flujo: Bronze -> Silver -> Gold
+
+Ejecutando Bronze - intento 1
+MSTR_PROVEEDORES: 80 registros
+MSTR_ARTICULOS: 500 registros
+MSTR_TIENDAS: 15 registros
+CRM_MIEMBROS: 5,000 registros
+TRANS_VENTAS: 10,000 registros
+INV_STOCK_DIARIO: 7,500 registros
+POST_DEVOLUCIONES: 500 registros
+Capa Bronze finalizada.
+Bronze finalizada correctamente en 18.36 segundos.
+
+Ejecutando Silver - intento 1
+MSTR_PROVEEDORES: 80 validos | 0 rechazados
+MSTR_ARTICULOS: 500 validos | 0 rechazados
+MSTR_TIENDAS: 15 validos | 0 rechazados
+CRM_MIEMBROS: 5,000 validos | 0 rechazados
+TRANS_VENTAS: 10,000 validos | 0 rechazados
+INV_STOCK_DIARIO: 7,500 validos | 0 rechazados
+POST_DEVOLUCIONES: 500 validos | 0 rechazados
+Reporte local: C:\Users\brenda\Documents\GitHub\retail-pipeline\docs\evidence\reporte_calidad_silver_20260719_200636.md
+Capa Silver finalizada.
+Silver finalizada correctamente en 21.65 segundos.
+
+Ejecutando Gold - intento 1
+dim_productos: 500 registros
+dim_tiendas: 15 registros
+dim_clientes: 5,000 registros
+fact_ventas: 10,000 registros
+fact_inventario: 7,500 registros
+fact_devoluciones: 500 registros
+fact_rfm_clientes: 2,873 registros
+Capa Gold finalizada.
+Gold finalizada correctamente en 20.60 segundos.
+
+=======================================================
+Estado final: Exitoso
+Finalización: 2026-07-19 14:07:16
+Resumen: C:\Users\brenda\Documents\GitHub\retail-pipeline\docs\evidence\04_pipeline_resumen.md
+=======================================================

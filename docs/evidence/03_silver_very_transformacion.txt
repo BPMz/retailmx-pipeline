@@ -1,0 +1,87 @@
+TIPOS EN BRONZE                                                             
+id_miembro                           int64
+fec_registro                        object
+id_ciudad                              str
+genero                                 str
+rango_edad                             str
+canal_pref                             str
+activo                                bool
+fec_ultima_compra                   object
+ingestion_timestamp    datetime64[us, UTC]
+source_system                          str
+batch_id                               str
+dtype: object
+
+TIPOS EN SILVER
+id_miembro                          string
+fec_registro                datetime64[us]
+id_ciudad                           string
+genero                              string
+rango_edad                          string
+canal_pref                          string
+activo                                bool
+fec_ultima_compra           datetime64[us]
+ingestion_timestamp    datetime64[us, UTC]
+source_system                       string
+batch_id                            string
+dtype: object
+
+ID EN BRONZE
+0    1
+1    2
+2    3
+3    4
+4    5
+Name: id_miembro, dtype: int64
+
+ID EN SILVER
+0    6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d...
+1    d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f...
+2    4e07408562bedb8b60ce05c1decfe3ad16b72230967de0...
+3    4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328c...
+4    ef2d127de37b942baad06145e54b0c619a1f22327b2ebb...
+Name: id_miembro, dtype: string
+
+GÉNERO EN BRONZE
+0               M
+1               F
+2    No informado
+3               M
+4               F
+5             NaN
+6    No informado
+7               F
+8    No informado
+9             NaN
+Name: genero, dtype: str
+
+GÉNERO EN SILVER
+0               M
+1               F
+2    NO INFORMADO
+3               M
+4               F
+5    NO INFORMADO
+6    NO INFORMADO
+7               F
+8    NO INFORMADO
+9    NO INFORMADO
+Name: genero, dtype: string
+
+Valores NO INFORMADO: 1804
+
+BRONZE
+id_trans                   int64
+fec_trans                 object
+qty_vendida                int64
+precio_unitario_venta     object
+id_miembro               float64
+dtype: object
+
+SILVER
+id_trans                          Int64
+fec_trans                datetime64[us]
+qty_vendida                       Int64
+precio_unitario_venta           Float64
+id_miembro                       string
+dtype: object

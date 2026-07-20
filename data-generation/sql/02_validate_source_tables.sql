@@ -1,4 +1,3 @@
-/* COUNT(*) de registros cargados por tabla */
 SELECT 'MSTR_PROVEEDORES' AS tabla, COUNT(*) AS registros
     FROM [source].[MSTR_PROVEEDORES]
 

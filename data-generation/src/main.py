@@ -1,6 +1,5 @@
 from pathlib import Path
 
-# Punto de entrada para generar y exportar datos fuente.
 from src.anomalies import inject_anomalies
 from src.config import load_project_configuration
 from src.export_data import export_tables

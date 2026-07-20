@@ -68,7 +68,6 @@ def generate_articulos(
         )
     ]
 
-    # Mayor concentración de artículos en precios bajos y medios.
     prices = np.round(
         np.clip(
             rng.lognormal(mean=np.log(200), sigma=1.0, size=row_count),

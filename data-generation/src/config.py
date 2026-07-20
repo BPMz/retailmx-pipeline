@@ -4,7 +4,6 @@ from typing import Any
 
 import yaml
 
-# tablas requeridas para la generación de datos.
 REQUIRED_TABLES = {
     "proveedores",
     "articulos",
@@ -33,7 +32,6 @@ SUPPORTED_FORMATS = {
     "parquet",
 }
 
-# Funcion para cargar un archivo YAML y devolver su contenido como un diccionario.
 def load_yaml(file_path: Path) -> dict[str, Any]:
     """ Lee un archivo YAML y devuelve su contenido. """
     if not file_path.exists():

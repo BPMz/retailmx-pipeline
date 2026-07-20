@@ -5,7 +5,6 @@ countries:
   - Peru
   - Ecuador
 
-
 locations:
   - id_ciudad: CO-BOG
     id_pais: CO
@@ -42,19 +41,16 @@ locations:
     ciudad: Quito
     pais: Ecuador
 
-
 store_types:
   - hypermarket
   - supermarket
   - convenience_store
   - ecommerce
 
-
 sales_channels:
   - physical_store
   - ecommerce
   - marketplace
-
 
 payment_types:
   physical_store:
@@ -73,20 +69,16 @@ payment_types:
     - debit_card
     - digital_wallet
 
-
 genders:
   - M
   - F
   - No informado
-
-
 
 units_of_measure:
   - unidad
   - kg
   - litro
   - pack
-
 
 categories:
   - name: Alimentos y bebidas
@@ -131,7 +123,6 @@ categories:
       - Higiene
       - Pañales
       - Maternidad
-
 
 return_reasons:
   - DAMAGED

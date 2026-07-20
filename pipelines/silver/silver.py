@@ -178,7 +178,7 @@ def run_silver():
             "null_percentages": nulls,
         })
 
-        print(f"{table}: {len(data[table]):,} válidos | {len(rejected):,} rechazados")
+        print(f"{table}: {len(data[table]):,} validos | {len(rejected):,} rechazados")
 
     error_df = (
         pd.concat(all_errors, ignore_index=True, sort=False)
