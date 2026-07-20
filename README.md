@@ -151,6 +151,7 @@ Azure SQL -> Bronze -> Silver -> Gold
 | Azure CLI | Validación y despliegue de infraestructura | Infraestructura |
 | Git | Control de versiones | Desarrollo y ejecución |
 | GitHub | Repositorio y entrega del proyecto | Desarrollo y ejecución |
+
 ---
 
 ## 4. Datos fuente
