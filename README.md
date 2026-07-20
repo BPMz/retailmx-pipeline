@@ -131,8 +131,7 @@ Azure SQL -> Bronze -> Silver -> Gold
 
 ## 3. Tecnologías y plataformas utilizadas
 
-| Tecnología o plataforma | Uso dentro del proyecto | Proceso | 
-|---|---|
+|---|---|---|
 | Python 3.12 | Generación, carga, transformación y orquestación local | Desarrollo y ejecución |
 | Pandas | Limpieza, validación y transformación de datos | Desarrollo y ejecución |
 | NumPy | Generación de valores y distribuciones | Desarrollo y ejecución |
@@ -140,18 +139,18 @@ Azure SQL -> Bronze -> Silver -> Gold
 | PyArrow | Lectura y escritura de archivos Parquet | Desarrollo y ejecución |
 | YAML | Configuración de volúmenes, fechas y reglas | Desarrollo y ejecución |
 | pyodbc y Microsoft ODBC Driver 18 | Conexión de Python con Azure SQL Database | Desarrollo y ejecución |
-| Python-dotenv | Lectura de variables de entorno | Desarrollo y ejecución |
+| python-dotenv | Lectura de variables de entorno | Desarrollo y ejecución |
 | Azure SQL Database | Fuente relacional del pipeline | Desarrollo y ejecución |
-| Azure Data Lake Storage Gen2 | Almacenamiento de Bronze, Silver y Gold | Desarrollo y ejecución |
+| Azure Data Lake Storage Gen2 | Almacenamiento de las capas Bronze, Silver y Gold | Desarrollo y ejecución |
 | Azure Storage SDK para Python | Lectura y escritura de archivos en ADLS Gen2 | Desarrollo y ejecución |
-| Azure Key Vault | Recurso desplegado como base para la administración futura de secretos | Desplegados en Azure |
-| Log Analytics Workspace | Recurso desplegado como base para monitoreo futuro | Desplegados en Azure |
-| Azure Monitor Action Group | Recurso desplegado como base para alertas futuras | Desplegados en Azure |
+| Azure Key Vault | Recurso desplegado para la administración futura de secretos | Desplegado en Azure |
+| Log Analytics Workspace | Recurso desplegado como base para monitoreo futuro | Desplegado en Azure |
+| Azure Monitor Action Group | Recurso desplegado como base para alertas futuras | Desplegado en Azure |
+| Azure Data Factory | Recurso desplegado como base para orquestación futura | Desplegado en Azure |
 | Bicep | Definición de infraestructura como código | Infraestructura |
 | Azure CLI | Validación y despliegue de infraestructura | Infraestructura |
 | Git | Control de versiones | Desarrollo y ejecución |
 | GitHub | Repositorio y entrega del proyecto | Desarrollo y ejecución |
-
 ---
 
 ## 4. Datos fuente
